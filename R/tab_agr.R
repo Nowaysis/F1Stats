@@ -7,6 +7,7 @@
 #' @import directlabels
 #' @import ggrepel
 #' @import grDevices
+#' @import RColorBrewer
 #' @return a plot containing a representation of the evolution of the points during a season
 #' @export
 #'

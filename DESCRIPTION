@@ -7,8 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "fleuryliwa@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-Imports: ggplot2, dplyr, reshape, directlabels, ggpubr, DT, ggrepel, grDevices
+Description: Ce package regroupe certaines fonctions et datasets servant au fonctionnement d'une application shiny sur la F1.
+Imports: ggplot2, dplyr, reshape, directlabels, ggpubr, DT, ggrepel, grDevices, RColorBrewer
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
