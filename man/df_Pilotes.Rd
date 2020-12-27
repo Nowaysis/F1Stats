@@ -5,7 +5,7 @@
 \alias{df_Pilotes}
 \title{Dataset about Karting}
 \format{
-An object of class \code{data.frame} with 337 rows and 6 columns.
+An object of class \code{data.frame} with 337 rows and 7 columns.
 }
 \usage{
 data(Comparaison_Pilotes)

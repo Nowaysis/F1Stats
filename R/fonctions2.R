@@ -7,6 +7,19 @@
 #'
 #'
 Stat_Pilote<-function(pilote){
+
+  Titres<-0
+  for(i in 1:71){
+    df<-Classements_Pilotes_Finaux[[i]]
+    if(isTRUE(df$Pts[df$Pilotes==pilote]==max(df$Pts) & pilote %in% df$Pilotes)){
+      Titre=1
+    }else{
+      Titre=0
+    }
+    Titres<-Titres+Titre
+  }
+
+
   total<-0
   for(i in 1:71){
     df<-Classements_Pilotes_Finaux[[i]]
@@ -107,7 +120,7 @@ Stat_Pilote<-function(pilote){
     df<-Tour_Par_Tour_F1[[i]]
   }
 
-  return(c(total, Nombre_GP, sum(Victoires),sum(Podiums),sum(Poles_Positions), Moyenne_Position))
+  return(c(Titres, total, Nombre_GP, sum(Victoires),sum(Podiums),sum(Poles_Positions), Moyenne_Position))
 }
 
 #' Title
@@ -117,20 +130,19 @@ Stat_Pilote<-function(pilote){
 #' @import ggplot2
 #' @import ggpubr
 #'
-#' @return comparaison entre les pilotes
+#' @return comparaison entre les pilotes, plusieurs barplots concernant leurs statistiques personnelles
 #' @export
 #'
 #'
 compare2<-function(pilote1="L. HAMILTON",pilote2="N. ROSBERG"){
   df<-df_Pilotes[c(pilote1,pilote2),]
   r<-list()
-  for(i in 1:6){
+  for(i in 1:7){
     temp<-ggplot(df,aes(x=row.names(df),y=.data[[names(df)[i]]]))+geom_bar(stat='identity',fill="steelblue")+
       geom_text(aes(label=.data[[names(df)[i]]]), vjust=3.4, color="white", size=5)+
       theme(axis.title=element_blank())
     r[[i]]<-temp
   }
-  plot<-ggarrange(r[[1]], r[[2]], r[[3]], r[[4]], r[[5]], r[[6]],
-                  labels=c("Points totaux","GP disputés","Victoires", "Podiums","Poles Positions", "Moyenne Qualif"),vjust=1.0,font.label=list(size=12),ncol=3, nrow=2)
+  plot<-ggarrange(r[[1]], r[[2]], r[[3]], r[[4]], r[[5]], r[[6]], r[[7]], labels=c("Titres","Points totaux","GP disput?s","Victoires", "Podiums","Poles Positions", "Moyenne Qualif"),vjust=1.0,font.label=list(size=12),ncol=4, nrow=2)
   return(plot)
 }

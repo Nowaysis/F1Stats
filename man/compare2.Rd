@@ -12,7 +12,7 @@ compare2(pilote1 = "L. HAMILTON", pilote2 = "N. ROSBERG")
 \item{pilote2}{second pilote de f1}
 }
 \value{
-comparaison entre les pilotes
+comparaison entre les pilotes, plusieurs barplots concernant leurs statistiques personnelles
 }
 \description{
 Title

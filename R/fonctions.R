@@ -23,7 +23,7 @@ Abrv4<-function(l){
 #' @return concatenation des caracteres
 #' @export
 #'
-#' @examples "je"%+%"suis
+#'
 "%+%"<-function(ch,ch2){
   paste(ch,ch2,sep="")
 }
